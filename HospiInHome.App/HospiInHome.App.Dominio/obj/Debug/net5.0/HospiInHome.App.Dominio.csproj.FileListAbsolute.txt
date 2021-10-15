@@ -1,0 +1,12 @@
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\bin\Debug\net5.0\HospiInHome.App.Dominio.deps.json
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\bin\Debug\net5.0\HospiInHome.App.Dominio.dll
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\bin\Debug\net5.0\ref\HospiInHome.App.Dominio.dll
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\bin\Debug\net5.0\HospiInHome.App.Dominio.pdb
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.csproj.AssemblyReference.cache
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.AssemblyInfoInputs.cache
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.AssemblyInfo.cs
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.csproj.CoreCompileInputs.cache
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.dll
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\ref\HospiInHome.App.Dominio.dll
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Dominio\obj\Debug\net5.0\HospiInHome.App.Dominio.pdb

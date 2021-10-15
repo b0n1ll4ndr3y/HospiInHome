@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\teis_\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\teis_\\.nuget\\packages"
+    ]
+  }
+}

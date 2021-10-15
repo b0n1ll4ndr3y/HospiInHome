@@ -1,0 +1,149 @@
+﻿@page
+@model HospiInHome.App.FrontEnd.Pages.ListPacientesModel
+@{
+
+}
+
+<h1 class="mb-5">Formulario de Pacientes</h1>
+
+<div class="container">
+    <main>
+        <div class="row g-5">
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Registrar Paciente</h4>
+                <form action="#" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-5">
+                            <label for="firstName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control form-control-sm" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Nombre requerido.
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="lastName" class="form-label">Apellido</label>
+                            <input type="text" class="form-control form-control-sm" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Apellido requerido.
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="typeDoc" class="form-label">Tipo de Documento</label>
+                            <select class="form-select form-control-sm" id="typeDoc" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">Cedula de Ciudadania</option>
+                                <option value="1">Pasaporte</option>
+                                <option value="2">Tarjeta de Identidad</option>
+                                <option value="3">Cedula de Extranjeria</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="document" class="form-label">Documento</label>
+                            <input type="text" class="form-control form-control-sm" id="document" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Campo Documento requerido.
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="birthday" class="form-label">Fecha de Nacimiento</label>
+                            <input type="Date" class="form-control form-control-sm" id="birthday" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Campo Fecha requerido.
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="genero" class="form-label">Genero</label>
+                            <select class="form-select form-control-sm" id="genero" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">Masculino</option>
+                                <option value="1">Femenino</option>
+                                <option value="2">Bisexual</option>
+                                <option value="3">Intersexual</option>
+                                <option value="4">Pansexual</option>
+                                <option value="5">Transexual</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-floating">
+                                <input type="text" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com" required>
+                                <label for="floatingInput">Latitud</label>
+                                <div class="invalid-feedback">
+                                    Campo Latitud requerida.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-floating">
+                                <input type="text" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com" required>
+                                <label for="floatingInput">Longitud</label>
+                                <div class="invalid-feedback">
+                                    Campo Longitud requerida.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="phone" class="form-label">Telefono</label>
+                            <input type="text" class="form-control form-control-sm" id="phone" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Campo Telefono requerido.
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="eps" class="form-label">Plan Medico</label>
+                            <select class="form-select form-select-sm" id="eps" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">Subsidiado</option>
+                                <option value="1">Contributivo</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="familiar" class="form-label">Familiar designado</label>
+                            <select class="form-select form-select-sm" id="familiar" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">familiar1</option>
+                                <option value="1">familiar2</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="doctor" class="form-label">Medico</label>
+                            <select class="form-select form-select-sm" id="dpctor" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">medico1</option>
+                                <option value="1">medico2</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="nurse" class="form-label">Enfermera</label>
+                            <select class="form-select form-select-sm" id="nurse" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">enfermera1</option>
+                                <option value="1">Enfermera2</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-3">
+                    <button class="btn btn-primary" type="submit">Registrar</button>
+                    <button class="btn btn-info" type="submit">Signos Vitales</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
