@@ -14,6 +14,20 @@ namespace HospiInHome.App.Persistencia.AppRepositorios
             _appContext=appContext;
         }
 
+        /* List<Paciente> Pacientes;
+
+        public RepoPaciente()
+        {
+            Pacientes = new List<Paciente>()
+            {
+                _appContext.Pacientes
+            };
+        }
+        IEnumerable<Paciente> IRepoPaciente.GetAll()
+        {
+            return _appContext.Pacientes;
+        } */
+
         Paciente IRepoPaciente.AddPaciente(Paciente paciente)
         {
             var pacienteAdicionado = _appContext.Pacientes.Add(paciente);
@@ -54,12 +68,11 @@ namespace HospiInHome.App.Persistencia.AppRepositorios
                 pacienteEncontrado.Latitud = paciente.Latitud;
                 pacienteEncontrado.Longitud = paciente.Longitud;
                 pacienteEncontrado.FechaNacimiento = paciente.FechaNacimiento;
-/*                pacienteEncontrado.FamiliarDesignado = paciente.FamiliarDesignado;
-                pacienteEncontrado.Medico = paciente.Medico;
-                pacienteEncontrado.Enfermera = paciente.Enfermera;
-                pacienteEncontrado.HistoriaClinica = paciente.HistoriaClinica;
                 pacienteEncontrado.SignosVitales = paciente.SignosVitales;
-*/
+                pacienteEncontrado.FamiliarDesignado = paciente.FamiliarDesignado;
+                //pacienteEncontrado.Medico = paciente.Medico;
+                //pacienteEncontrado.Enfermera = paciente.Enfermera;
+                //pacienteEncontrado.HistoriaClinica = paciente.HistoriaClinica;
                 _appContext.SaveChanges();
             }
             return pacienteEncontrado;

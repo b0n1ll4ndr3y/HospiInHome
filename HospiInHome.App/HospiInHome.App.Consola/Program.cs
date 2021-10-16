@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using HospiInHome.App.Dominio.Entidades;
 using HospiInHome.App.Persistencia.AppRepositorios;
 
@@ -31,46 +32,38 @@ namespace HospiInHome.App.Consola
             //AddEnfermera();
         }
 
-        /* private static void AddPaciente()
-        {
-            var paciente = new Paciente
-            {
-                Console.Write("Nombres: ");
-                Nombre = Console.ReadLine();
-
-                Console.Write("Apellidos: ");
-                Apellido = Console.ReadLine();
-                Console.Write("Telefono: ");
-                Telefono = Console.ReadLine();
-                Genero = Genero.Masculino;
-                TipoDocumento = TipoDocumento.CedulaDeCiudadania;
-                Console.Write("Documento: ");
-                Documento = Console.ReadLine();
-                Console.Write("Latitud: ");
-                Latitud = Console.ReadLine();
-                Console.Write("Logitud: ");
-                Longitud = Console.ReadLine();
-                FechaNacimiento = new DateTime(1993, 02, 08)
-            };
-            _repoPaciente.AddPaciente(paciente);
-            Console.WriteLine("El Paciente, " + paciente.Nombre + " " + paciente.Apellido + " fué agregado con éxito!");
-        } */
-
 /* CRUD de PACIENTE */
         private static void AddPaciente()
         {
             var paciente = new Paciente
             {
-                Nombre = "Michel",
-                Apellido = "Prada",
-                Telefono = "3067387544",
+                Nombre = "Andrea",
+                Apellido = "Gomez",
+                Telefono = "3147381234",
                 Genero = Genero.Femenino,
                 TipoDocumento = TipoDocumento.CedulaDeCiudadania,
-                Documento = "1002581637",
-                Latitud = 6.0233284D,
-                Longitud = -43.68673D,
-                PlanMedico = "Contributivo",
-                FechaNacimiento = new DateTime(1999, 05, 08)
+                Documento = "1071231637",
+                Latitud = 6.0299284D,
+                Longitud = -43.60873D,
+                PlanMedico = "Contibutivo",
+                FechaNacimiento = new DateTime(2000, 05, 20),
+                FamiliarDesignado = new FamiliarDesignado {
+                    Nombre = "Luis",
+                    Apellido = "Gomez",
+                    TipoDocumento = TipoDocumento.CedulaDeCiudadania,
+                    Documento = "1073785412",
+                    Genero = Genero.Masculino,
+                    Parentesco = "Hermano",
+                    Correo = "luisHermano@correo.com"
+                },
+                SignosVitales = new List<SignoVital> {
+                    new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.Oximetria, Valor=94},
+                    new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.FrecuenciaRespiratoria, Valor=53},
+                    new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.FrecuenciaCardiaca, Valor=67},
+                    new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.Temperatura, Valor=33},
+                    new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.PresionArterial, Valor=125},
+                    new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.Glicemia, Valor=108}
+                }
             };
             _repoPaciente.AddPaciente(paciente);
             Console.WriteLine("Paciente, " + paciente.Nombre + " " + paciente.Apellido + " ha sido agregad@ exitosamente!\n");

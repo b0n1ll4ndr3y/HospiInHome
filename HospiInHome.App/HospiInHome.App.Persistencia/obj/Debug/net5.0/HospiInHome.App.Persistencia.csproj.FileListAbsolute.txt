@@ -11,7 +11,6 @@ C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\bin\De
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\bin\Debug\net5.0\HospiInHome.App.Persistencia.pdb
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\bin\Debug\net5.0\HospiInHome.App.Dominio.dll
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\bin\Debug\net5.0\HospiInHome.App.Dominio.pdb
-C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\obj\Debug\net5.0\HospiInHome.App.Persistencia.csproj.CopyComplete
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\obj\Debug\net5.0\HospiInHome.App.Persistencia.dll
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\obj\Debug\net5.0\ref\HospiInHome.App.Persistencia.dll
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Persistencia\obj\Debug\net5.0\HospiInHome.App.Persistencia.pdb

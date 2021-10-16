@@ -6,6 +6,7 @@ namespace HospiInHome.App.Persistencia.AppRepositorios
     public interface IRepoPaciente
     {
         IEnumerable<Paciente> GetAllPacientes();
+        /* IEnumerable<Paciente> GetAll(); */
         Paciente AddPaciente(Paciente paciente);
         Paciente UpdatePaciente(Paciente paciente);
         void DeletePaciente(int idPaciente);

@@ -61,7 +61,6 @@ C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\n
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\HospiInHome.App.Consola.AssemblyInfoInputs.cache
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\HospiInHome.App.Consola.AssemblyInfo.cs
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\HospiInHome.App.Consola.csproj.CoreCompileInputs.cache
-C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\HospiInHome.App.Consola.csproj.CopyComplete
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\HospiInHome.App.Consola.dll
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\ref\HospiInHome.App.Consola.dll
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.Consola\obj\Debug\net5.0\HospiInHome.App.Consola.pdb
