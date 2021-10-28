@@ -63,7 +63,7 @@ namespace HospiInHome.App.Consola
                     new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.Temperatura, Valor=33},
                     new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.PresionArterial, Valor=125},
                     new SignoVital{FechaHora= new DateTime(2021,10,07,22,30,08), TipoSigno=TipoSigno.Glicemia, Valor=108}
-                }
+                },
             };
             _repoPaciente.AddPaciente(paciente);
             Console.WriteLine("Paciente, " + paciente.Nombre + " " + paciente.Apellido + " ha sido agregad@ exitosamente!\n");

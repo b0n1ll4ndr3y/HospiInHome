@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using HospiInHome.App.Dominio.Entidades;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospiInHome.App.Persistencia.AppRepositorios
 {
@@ -11,23 +12,14 @@ namespace HospiInHome.App.Persistencia.AppRepositorios
 
         public RepoPaciente(AppContext appContext)
         {
-            _appContext=appContext;
+            this._appContext=appContext;
         }
 
-        /* List<Paciente> Pacientes;
-
-        public RepoPaciente()
-        {
-            Pacientes = new List<Paciente>()
-            {
-                _appContext.Pacientes
-            };
-        }
-        IEnumerable<Paciente> IRepoPaciente.GetAll()
+        public IEnumerable<Paciente> GetAllPacientes()
         {
             return _appContext.Pacientes;
-        } */
-
+        }
+        
         Paciente IRepoPaciente.AddPaciente(Paciente paciente)
         {
             var pacienteAdicionado = _appContext.Pacientes.Add(paciente);
@@ -44,14 +36,32 @@ namespace HospiInHome.App.Persistencia.AppRepositorios
             _appContext.SaveChanges();
         }
 
-        IEnumerable<Paciente> IRepoPaciente.GetAllPacientes()
-        {
-            return _appContext.Pacientes;
-        }
-
         Paciente IRepoPaciente.GetPaciente(int idPaciente)
         {
             return _appContext.Pacientes.FirstOrDefault(p => p.Id == idPaciente);
+        }
+
+        FamiliarDesignado IRepoPaciente.GetFamiliarDesignado(int idPaciente)
+        {
+            var familiarDesignado = _appContext.Pacientes.Where(s => s.Id == idPaciente).Include(s => s.FamiliarDesignado).FirstOrDefault();
+            return familiarDesignado.FamiliarDesignado;
+        }
+        /* IEnumerable<FamiliarDesignado> IRepoPaciente.GetFamiliarDesignado()
+        {
+            return _appContext.Pacientes.Where(f => f.FamiliarDesignado == idFamiliarDesignado).ToList();
+        } */
+
+
+        Medico IRepoPaciente.GetMedicoAsignado(int idPaciente)
+        {
+            var medico = _appContext.Pacientes.Where(s => s.Id == idPaciente).Include(s => s.Medico).FirstOrDefault();
+            return medico.Medico;
+        }
+
+        Enfermera IRepoPaciente.GetEnfermeraAsignada(int idPaciente)
+        {
+            var enfermera = _appContext.Pacientes.Where(s => s.Id == idPaciente).Include(s => s.Enfermera).FirstOrDefault();
+            return enfermera.Enfermera;
         }
 
         Paciente IRepoPaciente.UpdatePaciente(Paciente paciente)
@@ -70,9 +80,9 @@ namespace HospiInHome.App.Persistencia.AppRepositorios
                 pacienteEncontrado.FechaNacimiento = paciente.FechaNacimiento;
                 pacienteEncontrado.SignosVitales = paciente.SignosVitales;
                 pacienteEncontrado.FamiliarDesignado = paciente.FamiliarDesignado;
-                //pacienteEncontrado.Medico = paciente.Medico;
-                //pacienteEncontrado.Enfermera = paciente.Enfermera;
-                //pacienteEncontrado.HistoriaClinica = paciente.HistoriaClinica;
+                pacienteEncontrado.Medico = paciente.Medico;
+                pacienteEncontrado.Enfermera = paciente.Enfermera;
+                pacienteEncontrado.HistoriaClinica = paciente.HistoriaClinica;
                 _appContext.SaveChanges();
             }
             return pacienteEncontrado;
