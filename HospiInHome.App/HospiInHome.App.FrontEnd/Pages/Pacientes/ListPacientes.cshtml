@@ -1,26 +1,46 @@
 ﻿@page
 @model HospiInHome.App.FrontEnd.Pages.ListPacientesModel
 @{
-
+    ViewData["Title"] = "Lista Pacientes";
 }
 
 <h1>Lista de Pacientes</h1>
 
-@* <br>
-<table class="table">
-    @foreach (var paciente in Model.Pacientes)
-    {
+<table class="table table-hover">
+    <thead>
         <tr>
-            <td>@paciente.Nombre</td>
-            <td>@paciente.Apellido</td>
-            <td>@paciente.TipoDocumento</td>
-            <td>@paciente.Documento</td>
-            <td>@paciente.Genero</td>
-            <td>@paciente.FechaNacimiento</td>
-            <td>@paciente.Latitud</td>
-            <td>@paciente.Longitud</td>
-            <td>@paciente.Telefono</td>
-            <td>@paciente.PlanMedico</td>
+            <th scope="col">No.</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Detalles</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Signos</th>
         </tr>
-    }
-</table> *@
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model.Pacientes)
+        {
+            <tr>
+                <td>@paciente.Id</td>
+                <td>@paciente.Nombre @paciente.Apellido</td>
+                <td>@paciente.Documento</td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./DetallesP" asp-route-idPaciente="@paciente.Id">
+                        <i class="fas fa-user-tag"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./EditPaciente" asp-route-idPaciente="@paciente.Id">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./Signos/List" asp-route-idPaciente="@paciente.Id">
+                        <i class="fas fa-heartbeat"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="/Pacientes/RegiPacientes" class="btn btn-outline-success">Registrar Paciente</a>

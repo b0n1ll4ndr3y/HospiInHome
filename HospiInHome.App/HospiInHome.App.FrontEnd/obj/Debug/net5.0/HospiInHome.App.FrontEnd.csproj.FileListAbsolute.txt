@@ -72,3 +72,5 @@ C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.FrontEnd\bin\Debug\
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.FrontEnd\bin\Debug\net5.0\HospiInHome.App.Persistencia.dll
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.FrontEnd\bin\Debug\net5.0\HospiInHome.App.Persistencia.pdb
 C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.FrontEnd\bin\Debug\net5.0\HospiInHome.App.Dominio.pdb
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Pacientes\DetallesP.cshtml.g.cs
+C:\ProysCicloIII\HospiInHome\HospiInHome.App\HospiInHome.App.FrontEnd\obj\Debug\net5.0\Razor\Pages\Pacientes\EditPaciente.cshtml.g.cs

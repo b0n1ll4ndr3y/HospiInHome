@@ -1,6 +1,10 @@
 ﻿@page
 @model HospiInHome.App.FrontEnd.Pages.RegiPacientesModel
+@using HospiInHome.App.Dominio.Entidades
 @{
+    ViewData["Title"] = "Registro Pacientes";
+    int idPaciente = Model.Paciente.Id;
+    int idFamiliarDesignado = Model.Paciente.FamiliarDesignado.Id;
 }
 
 <h1 class="mb-5">Formulario de Pacientes</h1>
@@ -10,112 +14,87 @@
         <div class="row g-5">
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Registrar Paciente</h4>
-                <form action="#" novalidate>
+                <form action="" method="post">
                     <div class="row g-3">
                         <div class="col-sm-5">
-                            <label for="firstName" class="form-label">Nombre</label>
-                            <input type="text" class="form-control form-control-sm" id="firstName" placeholder="" value="" required>
-                            <div class="invalid-feedback">
-                                Campo Nombre requerido.
-                            </div>
+                            <label asp-for="Paciente.Nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Nombre">
+                            <span class="text-danger" asp-validation-for="Paciente.Nombre"></span>
                         </div>
                         <div class="col-sm-5">
-                            <label for="lastName" class="form-label">Apellido</label>
-                            <input type="text" class="form-control form-control-sm" id="lastName" placeholder="" value="" required>
-                            <div class="invalid-feedback">
-                                Campo Apellido requerido.
-                            </div>
+                            <label asp-for="Paciente.Apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Apellido">
+                            <span class="text-danger" asp-validation-for="Paciente.Apellido"></span>
                         </div>
                         <div class="col-sm-4">
-                            <label for="typeDoc" class="form-label">Tipo de Documento</label>
-                            <select class="form-select form-control-sm" id="typeDoc" required>
-                                <option selected>Selecciona una opción</option>
-                                <option value="0">Cedula de Ciudadania</option>
-                                <option value="1">Pasaporte</option>
-                                <option value="2">Tarjeta de Identidad</option>
-                                <option value="3">Cedula de Extranjeria</option>
+                            <label asp-for="Paciente.TipoDocumento" class="form-label">Tipo de Documento</label>
+                            <select class="form-select form-control-sm" asp-for="Paciente.TipoDocumento">
+                                <option asp-for="TipoDocumento.CedulaDeCiudadania">CedulaDeCiudadania</option>
+                                <option asp-for="TipoDocumento.Pasaporte">Pasaporte</option>
+                                <option asp-for="TipoDocumento.TarjetaDeIdentidad">TarjetaDeIdentidad</option>
+                                <option asp-for="TipoDocumento.CedulaDeCiudadania">CedulaDeExtranjeria</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Selección requerida.
-                            </div>
                         </div>
                         <div class="col-sm-6">
-                            <label for="document" class="form-label">Documento</label>
-                            <input type="text" class="form-control form-control-sm" id="document" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Campo Documento requerido.
-                            </div>
+                            <label asp-for="Paciente.Documento" class="form-label">Documento</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Documento">
+                            <span class="text-danger" asp-validation-for="Paciente.Documento"></span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="birthday" class="form-label">Fecha de Nacimiento</label>
-                            <input type="Date" class="form-control form-control-sm" id="birthday" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Campo Fecha requerido.
-                            </div>
+                            <label asp-for="Paciente.FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                            <input type="Date" class="form-control form-control-sm" asp-for="Paciente.FechaNacimiento">
+                            <span class="text-danger" asp-validation-for="Paciente.FechaNacimiento"></span>
                         </div>
                         <div class="col-sm-4">
-                            <label for="genero" class="form-label">Genero</label>
-                            <select class="form-select form-control-sm" id="genero" required>
-                                <option selected>Selecciona una opción</option>
-                                <option value="0">Masculino</option>
-                                <option value="1">Femenino</option>
-                                <option value="2">Bisexual</option>
-                                <option value="3">Intersexual</option>
-                                <option value="4">Pansexual</option>
-                                <option value="5">Transexual</option>
+                            <label asp-for="Paciente.Genero" class="form-label">Genero</label>
+                            <select class="form-select form-control-sm" asp-for="Paciente.Genero">
+                                @* <option asp-for="Genero">@Model.Paciente.Genero</option> *@
+                                <option asp-for="Genero.Masculino">Masculino</option>
+                                <option asp-for="Genero.Femenino">Femenino</option>
+                                <option asp-for="Genero.Bisexual">Bisexual</option>
+                                <option asp-for="Genero.Intersexual">Intersexual</option>
+                                <option asp-for="Genero.Pansexual">Pansexual</option>
+                                <option asp-for="Genero.Transexual">Transexual</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Selección requerida.
-                            </div>
                         </div>
                         <div class="col-sm-5">
-                            <div class="form-floating">
-                                <input type="text" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com" required>
-                                <label for="floatingInput">Latitud</label>
-                                <div class="invalid-feedback">
-                                    Campo Latitud requerida.
-                                </div>
-                            </div>
+                            <label asp-for="Paciente.Latitud">Latitud</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Latitud">
+                            <span class="text-danger" asp-validation-for="Paciente.Latitud"></span>
                         </div>
                         <div class="col-sm-5">
-                            <div class="form-floating">
-                                <input type="text" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com" required>
-                                <label for="floatingInput">Longitud</label>
-                                <div class="invalid-feedback">
-                                    Campo Longitud requerida.
-                                </div>
-                            </div>
+                            <label asp-for="Paciente.Longitud">Longitud</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Longitud">
+                            <span class="text-danger" asp-validation-for="Paciente.Longitud"></span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="phone" class="form-label">Telefono</label>
-                            <input type="text" class="form-control form-control-sm" id="phone" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Campo Telefono requerido.
-                            </div>
+                            <label asp-for="Paciente.Telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Telefono">
+                            <span class="text-danger" asp-validation-for="Paciente.Telefono"></span>
                         </div>
                         <div class="col-sm-4">
-                            <label for="eps" class="form-label">Plan Medico</label>
-                            <select class="form-select form-select-sm" id="eps" required>
+                            <label asp-for="Paciente.PlanMedico" class="form-label">Plan Medico</label>
+                            <select class="form-select form-select-sm" asp-for="Paciente.PlanMedico">
                                 <option selected>Selecciona una opción</option>
-                                <option value="0">Subsidiado</option>
-                                <option value="1">Contributivo</option>
+                                <option value="Subsidiado">Subsidiado</option>
+                                <option value="Contributivo">Contributivo</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Selección requerida.
-                            </div>
+                            <span class="text-danger" asp-validation-for="Paciente.PlanMedico"></span>
                         </div>
                         <div class="col-sm-4">
-                            <label for="familiar" class="form-label">Familiar designado</label>
-                            <select class="form-select form-select-sm" id="familiar" required>
+                            <label asp-for="Paciente.FamiliarDesignado" class="form-label">Familiar designado</label>
+                            <select class="form-select form-select-sm" asp-for="Paciente.FamiliarDesignado">
+                                @* @foreach (var familiarDesignado in Model.Paciente.FamiliarDesignado)
+                                {
+                                    <option asp-for="FamiliarDesignado.Id">@Model.Paciente.FamiliarDesignado</option>
+                                } *@
                                 <option selected>Selecciona una opción</option>
                                 <option value="0">familiar1</option>
                                 <option value="1">familiar2</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Selección requerida.
-                            </div>
+                            <span class="text-danger" asp-validation-for="Paciente.FamiliarDesignado"></span>
                         </div>
-                        <div class="col-sm-3">
+                        @*<div class="col-sm-3">
                             <label for="doctor" class="form-label">Medico</label>
                             <select class="form-select form-select-sm" id="dpctor" required>
                                 <option selected>Selecciona una opción</option>
@@ -136,11 +115,11 @@
                             <div class="invalid-feedback">
                                 Selección requerida.
                             </div>
-                        </div>
+                        </div> *@
                     </div>
                     <hr class="my-3">
                     <button class="btn btn-primary" type="submit">Registrar</button>
-                    <button class="btn btn-info" type="submit">Signos Vitales</button>
+                    <a class="btn btn-info" href="./SignosV" role="button">Signos Vitales</a>
                     @* <button href="/Pacientes/ListPacientes" type="button" class="btn btn-outline-success">Lista de Pacientes</button> *@
                     <a class="btn btn-outline-success" href="/Pacientes/ListPacientes" role="button">Lista de Pacientes</a>
                 </form>

@@ -1,0 +1,70 @@
+﻿@page
+@model HospiInHome.App.FrontEnd.Pages.DetallesPModel
+@{
+    int idPaciente = Model.Paciente.Id;
+}
+
+<h1>Detalles del Paciente No. @Model.Paciente.Id</h1>
+<br>
+<div class="container">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th scope="row">Nombres:</th>
+                <td>@Model.Paciente.Nombre</td>
+            </tr>
+            <tr>
+                <th scope="row">Apellidos:</th>
+                <td>@Model.Paciente.Apellido</td>
+            </tr>
+            <tr>
+                <th scope="row">Tipo de Documento:</th>
+                <td>@Model.Paciente.TipoDocumento</td>
+            </tr>
+            <tr>
+                <th scope="row">No. Documento:</th>
+                <td>@Model.Paciente.Documento</td>
+            </tr>
+            <tr>
+                <th scope="row">Género:</th>
+                <td>@Model.Paciente.Genero</td>
+            </tr>
+            <tr>
+                <th scope="row">Fecha de Nacimiento:</th>
+                <td>@Model.Paciente.FechaNacimiento.ToString("yyy-MM-dd")</td>
+            </tr>
+            <tr>
+                <th scope="row">Geolocalización:</th>
+                <td>[ @Model.Paciente.Latitud N, @Model.Paciente.Longitud E ]</td>
+            </tr>
+            <tr>
+                <th scope="row">Teléfono:</th>
+                <td>@Model.Paciente.Telefono</td>
+            </tr>
+            <tr>
+                <th scope="row">Plan Medico:</th>
+                <td>@Model.Paciente.PlanMedico</td>
+            </tr>
+            <tr>
+                <th scope="row">Familiar designado:</th>
+                <td><a href="/Pacientes/Familiares/Detail?idfamiliardesignado=@Model.FamiliarDesignado.Id">@Model.FamiliarDesignado.Nombre @Model.FamiliarDesignado.Apellido</a></td>
+            </tr>
+            <tr>
+                <th scope="row">Medico tratante:</th>
+                <td>@* <a href="/Medicos/Detail?idmedico=@Model.Medico.Id">@Model.Medico.Nombre @Model.Medico.Apellido</a> *@</td>
+            </tr>
+            <tr>
+                <th scope="row">Enfermera tratante:</th>
+                <td>@* <a href="/Enfermeras/Detail?idenfermera=@Model.Enfermera.Id">@Model.Enfermera.Nombre @Model.Enfermera.Apellido</a> *@</td>
+            </tr>
+            <tr>
+                <th scope="row">Histórial clínico:</th>
+                <td>@Model.Paciente.HistoriaClinica</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<a asp-page="./EditPaciente" class="btn btn-outline-primary" asp-route-idPaciente="@idPaciente">Editar Paciente</a>
+<a asp-page="./Signos/ListSV" class="btn btn-outline-warning" asp-route-idPaciente="@idPaciente">Signos Vitales</a>
+<a asp-page="./ListPacientes" class="btn btn-outline-secondary">Volver</a>

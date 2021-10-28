@@ -7,30 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using HospiInHome.App.Dominio.Entidades;
 using HospiInHome.App.Persistencia.AppRepositorios;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HospiInHome.App.FrontEnd.Pages
 {
     public class ListPacientesModel : PageModel
     {
-        /* private static IRepoPaciente _repoPaciente = new RepoPaciente(new Persistencia.AppContext()); */
-
-        
-        /* private readonly IRepoPaciente repoPaciente; */
-        /* IEnumerable<Paciente> Pacientes {get;set;}
-        public static void ListarPaciente(IRepoPaciente repoPaciente)
+        private readonly IRepoPaciente _repoPaciente;
+        public IEnumerable<Paciente> Pacientes {get;set;}
+        public Paciente Paciente {get;set;}
+        public ListPacientesModel()
         {
-            _repoPaciente = _repoPaciente;
-        } */
-        
+            this._repoPaciente = new RepoPaciente(new HospiInHome.App.Persistencia.AppContext());
+        }
 
         public void OnGet()
         {
-            /* var paciente = repoPaciente.GetAllPacientes(); */
+            Pacientes = _repoPaciente.GetAllPacientes();   
         }
-
-        /* public static void ListarPaciente()
-        {
-            var paciente = _repoPaciente.GetAllPacientes();
-        } */
     }
 }

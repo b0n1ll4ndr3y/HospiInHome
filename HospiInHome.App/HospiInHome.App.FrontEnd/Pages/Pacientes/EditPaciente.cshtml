@@ -1,0 +1,133 @@
+﻿@page
+@model HospiInHome.App.FrontEnd.Pages.EditPacienteModel
+@using HospiInHome.App.Dominio.Entidades
+@{
+    ViewData["Title"] = "Editar Paciente";
+    int idPaciente = Model.Paciente.Id;
+}
+
+<h1 class="mb-5">Edición del Paciente No. @Model.Paciente.Id</h1>
+<h2>@Model.Paciente.Nombre @Model.Paciente.Apellido</h2>
+
+<div class="container">
+    <main>
+        <div class="row g-5">
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Editar Paciente</h4>
+                <form action="" method="post">
+                    <div class="row g-3">
+                        <input type="hidden" asp-for="Paciente.Id">
+                        <div class="col-sm-5">
+                            <label asp-for="Paciente.Nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Nombre">
+                            <span class="text-danger" asp-validation-for="Paciente.Nombre"></span>
+                        </div>
+                        <div class="col-sm-5">
+                            <label asp-for="Paciente.Apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Apellido">
+                            <span class="text-danger" asp-validation-for="Paciente.Apellido"></span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label asp-for="Paciente.TipoDocumento" class="form-label">Tipo de Documento</label>
+                            <select class="form-select form-control-sm" asp-for="Paciente.TipoDocumento">
+                                <option asp-for="TipoDocumento.CedulaDeCiudadania">CedulaDeCiudadania</option>
+                                <option asp-for="TipoDocumento.Pasaporte">Pasaporte</option>
+                                <option asp-for="TipoDocumento.TarjetaDeIdentidad">TarjetaDeIdentidad</option>
+                                <option asp-for="TipoDocumento.CedulaDeCiudadania">CedulaDeExtranjeria</option>
+                                @* <option selected>Selecciona una opción</option>
+                                <option value="0">Cedula de Ciudadania</option>
+                                <option value="1">Pasaporte</option>
+                                <option value="2">Tarjeta de Identidad</option>
+                                <option value="3">Cedula de Extranjeria</option> *@
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Paciente.Documento" class="form-label">Documento</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Documento">
+                            <span class="text-danger" asp-validation-for="Paciente.Documento"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Paciente.FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                            <input type="Date" class="form-control form-control-sm" asp-for="Paciente.FechaNacimiento">
+                            <span class="text-danger" asp-validation-for="Paciente.FechaNacimiento"></span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label asp-for="Paciente.Genero" class="form-label">Genero</label>
+                            <select class="form-select form-control-sm" asp-for="Paciente.Genero">
+                                @* <option asp-for="Genero">@Model.Paciente.Genero</option> *@
+                                <option asp-for="Genero.Masculino">Masculino</option>
+                                <option asp-for="Genero.Femenino">Femenino</option>
+                                <option asp-for="Genero.Bixesual">Bisexual</option>
+                                <option asp-for="Genero.Intersexual">Intersexual</option>
+                                <option asp-for="Genero.Pansexual">Pansexual</option>
+                                <option asp-for="Genero.Transsexual">Transexual</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-5">
+                            <label asp-for="Paciente.Latitud">Latitud</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Latitud">
+                            <span class="text-danger" asp-validation-for="Paciente.Latitud"></span>
+                        </div>
+                        <div class="col-sm-5">
+                            <label asp-for="Paciente.Longitud">Longitud</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Longitud">
+                            <span class="text-danger" asp-validation-for="Paciente.Longitud"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Paciente.Telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control form-control-sm" asp-for="Paciente.Telefono">
+                            <span class="text-danger" asp-validation-for="Paciente.Telefono"></span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label asp-for="Paciente.PlanMedico" class="form-label">Plan Medico</label>
+                            <select class="form-select form-select-sm" asp-for="Paciente.PlanMedico">
+                                <option selected>Selecciona una opción</option>
+                                <option value="Subsidiado">Subsidiado</option>
+                                <option value="Contributivo">Contributivo</option>
+                            </select>
+                            <span class="text-danger" asp-validation-for="Paciente.PlanMedico"></span>
+                        </div>
+                        @* <div class="col-sm-4">
+                            <label for="familiar" class="form-label">Familiar designado</label>
+                            <select class="form-select form-select-sm" id="familiar" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">familiar1</option>
+                                <option value="1">familiar2</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="doctor" class="form-label">Medico</label>
+                            <select class="form-select form-select-sm" id="dpctor" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">medico1</option>
+                                <option value="1">medico2</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="nurse" class="form-label">Enfermera</label>
+                            <select class="form-select form-select-sm" id="nurse" required>
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">enfermera1</option>
+                                <option value="1">Enfermera2</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selección requerida.
+                            </div>
+                        </div> *@
+                    </div>
+                    <hr class="my-3">
+                    <button class="btn btn-primary" type="submit">Grabar Edición</button>
+                    @* <button href="/Pacientes/ListPacientes" type="button" class="btn btn-outline-success">Lista de Pacientes</button> *@
+                    <a asp-page="./ListPacientes" class="btn btn-secondary">Volver a Lista</a>                    
+                </form>
+                
+            </div>
+        </div>
+    </main>
+</div>

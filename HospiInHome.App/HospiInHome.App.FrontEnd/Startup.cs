@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using HospiInHome.App.Persistencia;
 using HospiInHome.App.Persistencia.AppRepositorios;
 
 namespace HospiInHome.App.FrontEnd
@@ -26,7 +25,7 @@ namespace HospiInHome.App.FrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            /* services.AddSingleton<IRepoPaciente, RepoPaciente>(); */
+            services.AddDbContext<HospiInHome.App.Persistencia.AppContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
